@@ -1,0 +1,25 @@
+<!DOCTYPE HTML>
+
+<html xmlns:th="http://www.thymeleaf.org">
+	<head>
+		<title>Viikko1 Tehtävä 3</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+		
+	</head>
+	<body>
+		<h1>My Friends</h1>
+	
+	<ul th:each = "friend:${friends}">
+		<li th:text="${friend.name}"/>
+	</ul>
+	
+		<h1>Add new friend to the list</h1>
+
+		<form th:object = "${friend}" th:action="@{index}" action ="#" method="get">
+			Name: <input type="text" th:field="*{name}"/> <br/> <br/>
+			<button type="submit">Submit</button>
+		</form>
+	
+	</body>	
+
+</html>
